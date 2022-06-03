@@ -3,22 +3,35 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+	<title>Employee Data</title>
+	<style type="text/css">
+		table , tr , th , td {
+			border:2px solid blue;
+			border-collapse: collapse;
+			column-width: 4cm;		
+		}
+	</style>
 </head>
 <body>
-	<table>
-		<th>
-			
-		</th>
-	</table>
+	<table style="border:3px solid blue" >
+		<tr>
+			<% for(const key of Object.keys(result[0]) ){ %>
+				<th>
+					<%= key.toUpperCase() %>
+				</th>
+			<% } %>
+		</tr>
 
-	<% for(const row of result ){ %>
-		<ul>
-			<li>
-				<%= row.name %>
-			</li>
-		</ul>
-	<% } %>
+		<% for(const row of result ){ %>
+			<tr>
+			<% for(const key of Object.keys(row) ){ %>
+				<td>
+					<%= row[key] %>
+				</td>
+			<% } %>
+			</tr>
+		<% } %>
+	</table>
 
 </body>
 </html>

@@ -53,10 +53,10 @@ var server = http.createServer(function(req , res){
 	const results = getEmployeeData();
 	var htmlContent = fs.readFileSync(__dirname + '/view/dashboard.ejs' , 'utf8');
 	results.then((resp) => {
-		res.write('<h1>hello... from nodejs</h1>');
+		res.write('<h1>hello. from nodejs</h1>');
 		htmlRenderized = ejs.render(htmlContent , {result: resp});
 		res.write(htmlRenderized);
-		res.write('<h1>bye... form nodejs</h1>');
+		res.write('<h1>bye. form nodejs</h1>');
 		res.end();
 	});
 

@@ -1,11 +1,11 @@
-module.export = movie;
-
 var movie = {
 
-	movieName : "" ,
-	movieType : "" ,
+	movieName : "halla madrid" ,
+	movieType : "drama" ,
 	showDetails : function()
 				  {
-					  console.log(" it is of type => ");	//---------- why it is not printing -------------------
+					  console.log(this.movieName + " it is of type => " + this.movieType);	//---------- why it is not printing -------------------
 				  }
 };
+
+module.exports = movie;

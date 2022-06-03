@@ -1,4 +1,5 @@
 var movie = require('./movie');
+console.log(movie);
 
 function User(name)
 {
@@ -34,5 +35,4 @@ movie.movieType = "Drama";
 console.log(movie.movieName + " => " + movie.movieType);
 console.log(movie);
 
-
-//movie.showDetails;  //----------------------------------------------why it is not printing --------------------
+movie.showDetails();  
