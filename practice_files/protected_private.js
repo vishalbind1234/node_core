@@ -1,5 +1,3 @@
-//var require_data = require('./pathPractice.js');
-
 class car{
 
 	#name = null;
@@ -11,6 +9,7 @@ class car{
 		this.#name = name;
 		console.log(this.#name);
 		console.log(msg);
+		console.log(this);
 	}
 
 	_setColor(color)
@@ -31,7 +30,7 @@ class toyota extends car{
 		super(name , "message => hello");
 	}
 
-	getDetails()
+	_getDetails()
 	{
 	
 		var require_data = require('./pathPractice.js');
@@ -44,9 +43,16 @@ class toyota extends car{
 
 var xyz = new toyota("xyz");
 xyz._setColor("Orange");
-var require_data = xyz.getDetails();
+
+
+console.log(xyz);
+//console.log(Object.getOwnPropertyNames(xyz));
+
+var require_data = xyz._getDetails();
+console.log(require_data.path['showPathDetails']);
+
 
 //console.log(require('http'));
-console.log(require_data);
-console.log(xyz._wheel);
-console.log(xyz._color);
+//console.log(require_data);
+//console.log(xyz._wheel);
+//console.log(xyz._color);
