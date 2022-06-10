@@ -3,9 +3,9 @@ var Block_Core_Template = require("./Template").class;
 
 class Block_Core_Grid extends Block_Core_Template{
 
-	collection = [];
-	header = [];
-	action = [];
+	collection = {};
+	header = {};
+	action = {};
 
 	constructor(ccc_ref)
 	{

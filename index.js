@@ -26,12 +26,25 @@ class Ccc{
 
 	static ejs = require('ejs');
 	static mysql = require('mysql');
-	static fs = require('fs');;
+	static fs = require('fs');
 	static _class = null;
+
+	static url = require('url');
+	static request = null;
 
 	static getBaseDir()
 	{
 		return __dirname;
+	}
+
+	static getRequestObject()
+	{
+		return this.request;
+	}
+
+	static getUrlObject()
+	{
+		return this.url;
 	}
 
 	static getBlock(block) 
@@ -68,6 +81,7 @@ class Ccc{
 
 	static init(req)
 	{   
+		this.request = req;
 		var get_obj = url.parse(req.url , true).query;
 		var class_name = (get_obj.c === undefined) ? "error" : get_obj.c; 
 		this.loadClass(class_name);

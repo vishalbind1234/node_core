@@ -35,10 +35,10 @@ class Block_Product_Grid extends Block_Core_Grid{
 			index : "product_id"
 		});
 
-		this.addHeader("name" , {
+		/*this.addHeader("name" , {
 			title : "Name",
 			index : "name"
-		});
+		});*/
 
 		this.addHeader("sku" , {
 			title : "SKU",

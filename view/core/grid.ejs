@@ -14,6 +14,7 @@
 	</style>
 </head>
 <body>
+	<a href="<%= block_ref.getUrl('Category' , 'grid' , false , { name : 'vishal' , college : 'gecr' }); %>" ><button type="button" >Category</button></a>
 	<table>
 		<tr>
 			<% for(const [key , value] of Object.entries(block_ref.getHeader()) ){ %>
@@ -23,12 +24,19 @@
 			<% } %>
 		</tr>
 
+		<!-- <% var headers = Object.keys(block_ref.getHeader()) %> -->
+		<% var header_values = Object.values(block_ref.getHeader()) %>
+		<% var headers = header_values.map(function(element){ return element.index; }) %>
+		<!-- <% console.log( headers ); %> -->
+
 		<% for(const row of block_ref.getCollection() ){ %>
 			<tr>
 				<% for(const [key , value] of Object.entries(row.getData()) ){ %>
-					<td>
-						<%= value %>
-					</td>
+					<% if(headers.includes(key)){ %>
+						<td>
+							<%= value %>
+						</td>
+					<% } %>
 				<% } %>
 			</tr>
 		<% } %>
@@ -36,5 +44,6 @@
 		
 	</table>
 
+	<p><%= block_ref.getUrl("Category" , "grid" , false , { name : "vishal" , college : "gecr" }); %></p>
 </body>
 </html>

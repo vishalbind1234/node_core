@@ -17,6 +17,11 @@ class Controller_Product extends Controller_Core_Action{
 
 	}
 
+	errorAction()
+	{
+		return "<h1> Page Not Found... </h2>";
+	}
+
 }
 
 module.exports = {class : Controller_Product};
